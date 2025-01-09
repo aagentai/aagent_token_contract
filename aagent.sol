@@ -21,26 +21,6 @@ import {Ownable} from "@openzeppelin/contracts@5.1.0/access/Ownable.sol";
  */
 contract Aagent is ERC20, ERC20Pausable, Ownable, ERC20Permit {
 
-    /**
-     * @dev Emitted when the pause is triggered by `account`.
-     */
-    event AccountPaused(address account, address sender);
-
-    /**
-     * @dev Emitted when the pause is lifted by `account`.
-     */
-    event AccountUnpaused(address account, address sender);
-
-    /**
-    * @dev Error if account is paused
-    */
-    error AccountPausedError(address account);
-
-    /**
-    * @dev mapping to keep track of paused addressess
-    */
-    mapping(address => bool) private pausedAddresses;
-
     constructor(address initialOwner)
         ERC20("Aagent", "AAI")
         Ownable(initialOwner)
@@ -57,41 +37,12 @@ contract Aagent is ERC20, ERC20Pausable, Ownable, ERC20Permit {
         _unpause();
     }
 
-    /**
-     * @dev Returns true if the account is paused, and false otherwise.
-     */
-    function isAccountPaused(address account) public view returns (bool) {
-        return pausedAddresses[account];
-    }
-
-    /**
-     * @dev Triggers stopped state for the address.
-     *
-     */
-    function pauseAccount(address account) external onlyOwner {
-        pausedAddresses[account] = true;
-        emit AccountPaused(account, _msgSender());
-    }
-
-    /**
-     * @dev Returns to normal state.
-     *
-     */
-    function unpauseAccount(address account) external onlyOwner {
-        delete pausedAddresses[account];
-        emit AccountUnpaused(account, _msgSender());
-    }
-
     // The following functions are overrides required by Solidity.
 
     function _update(address from, address to, uint256 value)
         internal
         override(ERC20, ERC20Pausable)
-    {
-        if(pausedAddresses[from]) {
-            revert AccountPausedError(from);
-        } 
-            
+    {            
         super._update(from, to, value);
     }
 }
