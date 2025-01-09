@@ -14,7 +14,6 @@ pragma solidity ^0.8.22;
  *   Website: https://aagent.ai            Telegram: https://t.me/aagentAI                                                                                                                                                               
  */
 
-
 /**
  * @dev Interface of the ERC-20 standard as defined in the ERC.
  */
@@ -90,6 +89,11 @@ interface IERC20 {
     function transferFrom(address from, address to, uint256 value) external returns (bool);
 }
 
+// File: @openzeppelin/contracts@5.1.0/token/ERC20/extensions/IERC20Metadata.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (token/ERC20/extensions/IERC20Metadata.sol)
+
 /**
  * @dev Interface for the optional metadata functions from the ERC-20 standard.
  */
@@ -109,6 +113,11 @@ interface IERC20Metadata is IERC20 {
      */
     function decimals() external view returns (uint8);
 }
+
+// File: @openzeppelin/contracts@5.1.0/utils/Context.sol
+
+
+// OpenZeppelin Contracts (last updated v5.0.1) (utils/Context.sol)
 
 /**
  * @dev Provides information about the current execution context, including the
@@ -133,6 +142,11 @@ abstract contract Context {
         return 0;
     }
 }
+
+// File: @openzeppelin/contracts@5.1.0/interfaces/draft-IERC6093.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (interfaces/draft-IERC6093.sol)
 
 /**
  * @dev Standard ERC-20 Errors
@@ -291,6 +305,11 @@ interface IERC1155Errors {
      */
     error ERC1155InvalidArrayLength(uint256 idsLength, uint256 valuesLength);
 }
+
+// File: @openzeppelin/contracts@5.1.0/token/ERC20/ERC20.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (token/ERC20/ERC20.sol)
 
 /**
  * @dev Implementation of the {IERC20} interface.
@@ -595,6 +614,11 @@ abstract contract ERC20 is Context, IERC20, IERC20Metadata, IERC20Errors {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/utils/Pausable.sol
+
+
+// OpenZeppelin Contracts (last updated v5.0.0) (utils/Pausable.sol)
+
 /**
  * @dev Contract module which allows children to implement an emergency stop
  * mechanism that can be triggered by an authorized account.
@@ -708,6 +732,11 @@ abstract contract Pausable is Context {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/token/ERC20/extensions/ERC20Pausable.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (token/ERC20/extensions/ERC20Pausable.sol)
+
 /**
  * @dev ERC-20 token with pausable token transfers, minting and burning.
  *
@@ -733,6 +762,11 @@ abstract contract ERC20Pausable is ERC20, Pausable {
         super._update(from, to, value);
     }
 }
+
+// File: @openzeppelin/contracts@5.1.0/token/ERC20/extensions/IERC20Permit.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (token/ERC20/extensions/IERC20Permit.sol)
 
 /**
  * @dev Interface of the ERC-20 Permit extension allowing approvals to be made via signatures, as defined in
@@ -819,6 +853,11 @@ interface IERC20Permit {
     // solhint-disable-next-line func-name-mixedcase
     function DOMAIN_SEPARATOR() external view returns (bytes32);
 }
+
+// File: @openzeppelin/contracts@5.1.0/utils/cryptography/ECDSA.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/cryptography/ECDSA.sol)
 
 /**
  * @dev Elliptic Curve Digital Signature Algorithm (ECDSA) operations.
@@ -996,6 +1035,11 @@ library ECDSA {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/utils/Panic.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/Panic.sol)
+
 /**
  * @dev Helper library for emitting standardized panic codes.
  *
@@ -1048,6 +1092,12 @@ library Panic {
         }
     }
 }
+
+// File: @openzeppelin/contracts@5.1.0/utils/math/SafeCast.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/math/SafeCast.sol)
+// This file was procedurally generated from scripts/generate/templates/SafeCast.js.
 
 /**
  * @dev Wrappers over Solidity's uintXX/intXX/bool casting operators with added overflow
@@ -2206,6 +2256,11 @@ library SafeCast {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/utils/math/Math.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/math/Math.sol)
+
 /**
  * @dev Standard math utilities missing in the Solidity language.
  */
@@ -2884,6 +2939,11 @@ library Math {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/utils/math/SignedMath.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/math/SignedMath.sol)
+
 /**
  * @dev Standard signed math utilities missing in the Solidity language.
  */
@@ -2945,6 +3005,11 @@ library SignedMath {
         }
     }
 }
+
+// File: @openzeppelin/contracts@5.1.0/utils/Strings.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/Strings.sol)
 
 /**
  * @dev String operations.
@@ -3055,6 +3120,11 @@ library Strings {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/utils/cryptography/MessageHashUtils.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/cryptography/MessageHashUtils.sol)
+
 /**
  * @dev Signature message hash utilities for producing digests to be consumed by {ECDSA} recovery or signing.
  *
@@ -3132,6 +3202,12 @@ library MessageHashUtils {
         }
     }
 }
+
+// File: @openzeppelin/contracts@5.1.0/utils/StorageSlot.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/StorageSlot.sol)
+// This file was procedurally generated from scripts/generate/templates/StorageSlot.js.
 
 /**
  * @dev Library for reading and writing primitive types to specific storage slots.
@@ -3271,6 +3347,11 @@ library StorageSlot {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/utils/ShortStrings.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/ShortStrings.sol)
+
 // | string  | 0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   |
 // | length  | 0x                                                              BB |
 type ShortString is bytes32;
@@ -3387,6 +3468,11 @@ library ShortStrings {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/interfaces/IERC5267.sol
+
+
+// OpenZeppelin Contracts (last updated v5.0.0) (interfaces/IERC5267.sol)
+
 interface IERC5267 {
     /**
      * @dev MAY be emitted to signal that the domain could have changed.
@@ -3410,6 +3496,11 @@ interface IERC5267 {
             uint256[] memory extensions
         );
 }
+
+// File: @openzeppelin/contracts@5.1.0/utils/cryptography/EIP712.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (utils/cryptography/EIP712.sol)
 
 /**
  * @dev https://eips.ethereum.org/EIPS/eip-712[EIP-712] is a standard for hashing and signing of typed structured data.
@@ -3563,6 +3654,11 @@ abstract contract EIP712 is IERC5267 {
     }
 }
 
+// File: @openzeppelin/contracts@5.1.0/utils/Nonces.sol
+
+
+// OpenZeppelin Contracts (last updated v5.0.0) (utils/Nonces.sol)
+
 /**
  * @dev Provides tracking nonces for addresses. Nonces will only increment.
  */
@@ -3605,6 +3701,11 @@ abstract contract Nonces {
         }
     }
 }
+
+// File: @openzeppelin/contracts@5.1.0/token/ERC20/extensions/ERC20Permit.sol
+
+
+// OpenZeppelin Contracts (last updated v5.1.0) (token/ERC20/extensions/ERC20Permit.sol)
 
 /**
  * @dev Implementation of the ERC-20 Permit extension allowing approvals to be made via signatures, as defined in
@@ -3678,6 +3779,11 @@ abstract contract ERC20Permit is ERC20, IERC20Permit, EIP712, Nonces {
         return _domainSeparatorV4();
     }
 }
+
+// File: @openzeppelin/contracts@5.1.0/access/Ownable.sol
+
+
+// OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable.sol)
 
 /**
  * @dev Contract module which provides a basic access control mechanism, where
@@ -3773,31 +3879,9 @@ abstract contract Ownable is Context {
     }
 }
 
-// File: Aagent1.sol
-
-
+// File: Aagent.sol
 
 contract Aagent is ERC20, ERC20Pausable, Ownable, ERC20Permit {
-
-    /**
-     * @dev Emitted when the pause is triggered by `account`.
-     */
-    event AccountPaused(address account, address sender);
-
-    /**
-     * @dev Emitted when the pause is lifted by `account`.
-     */
-    event AccountUnpaused(address account, address sender);
-
-    /**
-    * @dev Error if account is paused
-    */
-    error AccountPausedError(address account);
-
-    /**
-    * @dev mapping to keep track of paused addressess
-    */
-    mapping(address => bool) private pausedAddresses;
 
     constructor(address initialOwner)
         ERC20("Aagent", "AAI")
@@ -3815,41 +3899,12 @@ contract Aagent is ERC20, ERC20Pausable, Ownable, ERC20Permit {
         _unpause();
     }
 
-    /**
-     * @dev Returns true if the account is paused, and false otherwise.
-     */
-    function isAccountPaused(address account) public view returns (bool) {
-        return pausedAddresses[account];
-    }
-
-    /**
-     * @dev Triggers stopped state for the address.
-     *
-     */
-    function pauseAccount(address account) external onlyOwner {
-        pausedAddresses[account] = true;
-        emit AccountPaused(account, _msgSender());
-    }
-
-    /**
-     * @dev Returns to normal state.
-     *
-     */
-    function unpauseAccount(address account) external onlyOwner {
-        delete pausedAddresses[account];
-        emit AccountUnpaused(account, _msgSender());
-    }
-
     // The following functions are overrides required by Solidity.
 
     function _update(address from, address to, uint256 value)
         internal
         override(ERC20, ERC20Pausable)
-    {
-        if(pausedAddresses[from]) {
-            revert AccountPausedError(from);
-        } 
-            
+    {            
         super._update(from, to, value);
     }
 }
